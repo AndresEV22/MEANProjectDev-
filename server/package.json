@@ -1,0 +1,27 @@
+{
+  "name": "apinotes",
+  "version": "1.0.0",
+  "description": "its a API in JSON",
+  "main": "index.js",
+  "scripts": {
+    "dev":"nodemon ."
+  },
+  "keywords": [
+    "MEAN",
+    "API",
+    "Proyect",
+    "LBCET",
+    "MIT"
+  ],
+  "author": "Andres Escobar Vélez",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

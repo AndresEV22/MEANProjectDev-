@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8 offset-2">
+        <div class="card border border-primary">
+          <div class="card-body text-center">
+            <div class="card-title bg-black text-white mb-2 p-3 rounded border-primary border-bottom border-2 shadow"><h4>Resultados Listos</h4></div>
+            <div class="row">
+              <div class="card-title">
+                <button class="btn btn-outline-primary float-end mx-2" routerLink="/create-note" ><i class="fa-solid fa-circle-plus"></i> Agregar resultados</button>
+                <button class="btn btn-outline-success float-end" (click)="generateArchive('ArchivoJson.json')"><i class="fa-solid fa-circle-plus"></i> Descargar JSON</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table *ngIf="listNotes.length > 0" class="table table-dark table-hover table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">Paciente</th>
+                    <th scope="col">Radicado</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let note of listNotes">
+                    <td scope="col">{{ note.name }}</td>
+                    <td scope="col">{{ note.notes.idNote }}</td>
+                    <td            ><button class="btn btn-outline-light float-end mx-2" (click)="description(note._id)" ><i class="fa-solid fa-eye mx-2"></i>Ver Descripción</button></td>
+                    <td scope="col">
+                      <div class="row mx-1">
+                        <div class="row"><i [routerLink]="['/edit-note', note._id]" class="fa-regular fa-pen-to-square text-warning"></i></div>
+                        <div class="row mt-3"><i (click)="deleteNote(note._id)" class="fa-solid fa-trash text-danger"></i></div>
+                        <div class="row mt-3"><i [routerLink]="['/pdf-download', note._id]" class="fa-regular fa-file-pdf"></i></div>
+                      </div>
+                      
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 *ngIf="listNotes.length == 0" class="text-center mt-5">No hay datos para mostrar</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,30 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-2">
+            <div class="card border border-primary">
+                <div class="card-body" id="results">
+                    <div class="card-title bg-black p-2 text-white text-center rounded border-primary border-bottom border-2 shadow"><h3>Resultados para el paciente {{ name | uppercase }}</h3></div>
+                    <div class="card-subtitle mt-2 mb-5">Examenes de laboratorio con radicado: {{numNote}}</div>
+                    <img src="../../../assets/images/labhtml.png" class="img-fluid imglg card-img-top" alt="...">
+                    <div class="card-text text-center">
+                        En el Laboratorio Clínico Hematológico contamos con tecnología de punta que permite la realización de pruebas que facilitan al médico ayudas para el diagnóstico, tratamiento y seguimiento de sus pacientes. ¡Laboratorio Clínico Hematológico, Medicina Diagnóstica Especializada!
+                    </div>
+                    <div class="card-text mt-5">
+                        <div class="card-title p-3 text-center rounded border-primary border-bottom border-2 shadow"><h5>Descripcón de resultados</h5></div>
+                        <div class="card-subtitle mt-2">{{name}}</div>
+                    </div>
+                    <div class="card-text mt-3">
+                        {{note}}
+                    </div>
+                    <div class="card-subtitle mt-4">Fecha de generación: {{year}}</div>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <button class="btn btn-outline-dark float-start" routerLink="" ><i class="fa-sharp fa-solid fa-arrow-left"></i> Regresar</button>
+                        <button type="button" (click)="dowloadPDF()" class="btn btn-outline-danger float-end"><i class="fa-solid fa-file-arrow-down"></i> Descargar PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
